@@ -20,6 +20,18 @@
       <div id="unity-warning"> </div>
     </div>
     <script>
+      document.addEventListener('keydown', function(event) {
+        // check if CTRL is pressed
+        if (event.ctrlKey){
+          // check WASD
+          if (event.key == 'w' || event.key == 'a' || event.key == 's' || event.key == 'd'){
+            event.preventDefault();
+          }
+        }
+      });
+    </script>
+    
+    <script>
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
           navigator.serviceWorker.register("ServiceWorker.js");
