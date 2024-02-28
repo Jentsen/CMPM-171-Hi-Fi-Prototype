@@ -101,9 +101,16 @@
     </script>
     <script>
       document.addEventListener('keydown', function(event) {
-        // check if CTRL is pressed
-        if (event.ctrlKey && (event.key === 'w' || event.key === 's' || event.key ==='d')) {
-          event.preventDefault();
+        if (event.ctrlKey) {
+          switch (event.keyCode) {
+            case 65: // A
+            case 83: // S
+            case 87: // W
+            case 68: // D
+              event.preventDefault();
+              alert('This shortcut is disabled!');
+              break;
+          }
         }
       });
     </script>
